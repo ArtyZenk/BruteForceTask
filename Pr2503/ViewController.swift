@@ -43,17 +43,13 @@ class ViewController: UIViewController {
     }
 }
 
-
-
 extension String {
-    var digits:      String { return "0123456789" }
-    var lowercase:   String { return "abcdefghijklmnopqrstuvwxyz" }
-    var uppercase:   String { return "ABCDEFGHIJKLMNOPQRSTUVWXYZ" }
-    var punctuation: String { return "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~" }
-    var letters:     String { return lowercase + uppercase }
-    var printable:   String { return digits + letters + punctuation }
-
-
+    var digits: String { "0123456789" }
+    var lowercase: String { "abcdefghijklmnopqrstuvwxyz" }
+    var uppercase: String { "ABCDEFGHIJKLMNOPQRSTUVWXYZ" }
+    var punctuation: String { "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~" }
+    var letters: String { lowercase + uppercase }
+    var printable: String { digits + letters + punctuation }
 
     mutating func replace(at index: Int, with character: Character) {
         var stringArray = Array(self)
@@ -85,7 +81,6 @@ func generateBruteForce(_ string: String, fromArray array: [String]) -> String {
             str = String(generateBruteForce(String(str.dropLast()), fromArray: array)) + String(str.last!)
         }
     }
-
     return str
 }
 
